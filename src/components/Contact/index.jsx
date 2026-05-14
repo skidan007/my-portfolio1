@@ -4,10 +4,10 @@ import FadeIn from "../common/FadeIn";
 import SectionLabel from "../common/SectionLabel";
 
 const CONTACT_INFO = [
-  { icon: "📧", label: "Email", val: "hello@deetech.dev" },
-  { icon: "💬", label: "WhatsApp", val: "+234 800 DEE TECH" },
-  { icon: "🐙", label: "GitHub", val: "github.com/deetech" },
-  { icon: "💼", label: "LinkedIn", val: "linkedin.com/in/deetech" },
+  { icon: "📧", label: "Email", val: "skidan007@mail.com" },
+  { icon: "💬", label: "WhatsApp", val: "+234 7066557974" },
+  { icon: "🐙", label: "GitHub", val: "github.com/skidan007" },
+  { icon: "💼", label: "LinkedIn", val: "linkedin.com/in/daniel-benard" },
 ];
 
 export default function Contact() {
@@ -196,7 +196,7 @@ export default function Contact() {
                   />
                 </div>
                 <button
-                  onClick={submit}
+                  onClick={submit} 
                   style={{
                     width: "100%",
                     padding: "15px",
