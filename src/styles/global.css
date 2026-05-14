@@ -53,7 +53,12 @@ body { background: #030712; color: #F1F5F9; }
   .hero-grid > * {
     width: 100%;
   }
-  .hero-cta,
+  .hero-cta {
+    justify-content: center !important;
+    width: 50%;
+    gap: 10px !important;
+    margin: 0 auto !important;
+  }
   .hero-stats {
     justify-content: center !important;
     width: 100%;
