@@ -135,7 +135,7 @@ export default function About() {
               }}
             >
               "I once fixed a critical production bug between two bites of suya.
-              No big deal." 🍢
+              No big deal." 😉 🍢 
             </div>
           </FadeIn>
         </div>
