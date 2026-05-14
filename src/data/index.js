@@ -56,13 +56,13 @@ export const PROJECTS = [
     emoji: "🎓",
     color: "#7C3AED",
   },
-  {
-    title: "AI SaaS Dashboard",
-    desc: "Analytics dashboard with AI-powered insights, real-time charts, and multi-tenant architecture.",
-    tags: ["Next.js", "TypeScript", "Firebase"],
-    emoji: "🤖",
-    color: "#059669",
-  },
+  // {
+  //   title: "AI SaaS Dashboard",
+  //   desc: "Analytics dashboard with AI-powered insights, real-time charts, and multi-tenant architecture.",
+  //   tags: ["Next.js", "TypeScript", "Firebase"],
+  //   emoji: "🤖",
+  //   color: "#059669",
+  // },
   {
     title: "Logistics Tracking App",
     desc: "Live package tracking with driver assignment, route optimization, and customer notifications.",
@@ -73,11 +73,11 @@ export const PROJECTS = [
 ];
 
 export const JOURNEY = [
-  { year: "2018", title: "University of Lagos", desc: "Started Business Administration — learned how companies really work (and fail).", icon: "🎓" },
-  { year: "2020", title: "Fell into Web Dev", desc: "One YouTube tutorial at 2am. That was it. Sleep became optional.", icon: "💻" },
-  { year: "2021", title: "Full Stack Developer", desc: "Backend, frontend, databases — if it runs on a server, I've probably broken it once.", icon: "⚡" },
-  { year: "2022", title: "Expanded to Mobile", desc: "React Native first, then Flutter. Now apps live in pockets, not just browsers.", icon: "📱" },
-  { year: "2023", title: "Founded DeeTech", desc: "Combined business knowledge + tech skills. Building products that actually make money.", icon: "🚀" },
+  { year: "2020", title: "University of Lagos", desc: "Started Business Administration — learned how companies really work (and fail).", icon: "🎓" },
+  { year: "2024", title: "Fell into Web Dev", desc: "One YouTube tutorial at 2am. That was it. Sleep became optional.", icon: "💻" },
+  { year: "2025", title: "Full Stack Developer", desc: "Backend, frontend, databases — if it runs on a server, I've probably broken it once.", icon: "⚡" },
+  { year: "2026", title: "Expanded to Mobile", desc: "React Native first, then Flutter. Now apps live in pockets, not just browsers.", icon: "📱" },
+  { year: "2026", title: "Founded DeeTech", desc: "Combined business knowledge + tech skills. Building products that actually make money.", icon: "🚀" },
 ];
 
 export const TESTIMONIALS = [
