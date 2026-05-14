@@ -38,7 +38,7 @@ body { background: #030712; color: #F1F5F9; }
 ::-webkit-scrollbar-track { background: #030712; }
 ::-webkit-scrollbar-thumb { background: rgba(0, 201, 200, 0.4); border-radius: 3px; }
 
-@media (max-width: 768px) {
+@media (max-width: 947px) {
   .nav-desktop { display: none !important; }
   .nav-mobile { display: flex !important; }
   .about-grid,
@@ -65,6 +65,6 @@ body { background: #030712; color: #F1F5F9; }
   }
   .hero-avatar { display: none !important; }
 }
-@media (min-width: 769px) {
+@media (min-width: 948px) {
   .nav-mobile { display: none !important; }
 }
