@@ -18,7 +18,13 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const submit = () => {
-    if (form.name && form.email && form.message) setSent(true);
+    if (form.name && form.email && form.message) {
+      const subject = `Portfolio Contact from ${form.name}`;
+      const body = `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
+      const mailtoUrl = `mailto:skidan007@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.open(mailtoUrl, '_blank');
+      setSent(true);
+    }
   };
 
   const inputStyle = {
