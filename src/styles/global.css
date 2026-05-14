@@ -41,8 +41,28 @@ body { background: #030712; color: #F1F5F9; }
 @media (max-width: 768px) {
   .nav-desktop { display: none !important; }
   .nav-mobile { display: flex !important; }
-  .about-grid { grid-template-columns: 1fr !important; }
-  .contact-grid { grid-template-columns: 1fr !important; }
+  .about-grid,
+  .contact-grid,
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+    text-align: center;
+  }
+  .about-grid > *,
+  .contact-grid > *,
+  .hero-grid > * {
+    width: 100%;
+  }
+  .hero-cta,
+  .hero-stats {
+    justify-content: center !important;
+    width: 100%;
+  }
+  .hero-cta > *,
+  .hero-stats > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .hero-avatar { display: none !important; }
 }
 @media (min-width: 769px) {

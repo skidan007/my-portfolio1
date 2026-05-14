@@ -112,6 +112,7 @@ export default function Hero() {
           position: "relative",
           zIndex: 1,
         }}
+        className="hero-grid"
       >
         <div>
           {/* Available badge */}
@@ -210,7 +211,7 @@ export default function Hero() {
           </p>
 
           {/* CTA buttons */}
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+          <div className="hero-cta" style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <button
               onClick={() =>
                 document
@@ -275,6 +276,7 @@ export default function Hero() {
 
           {/* Stats */}
           <div
+            className="hero-stats"
             style={{
               display: "flex",
               gap: 40,
