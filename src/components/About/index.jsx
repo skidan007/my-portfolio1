@@ -87,7 +87,7 @@ export default function About() {
                 lineHeight: 1.2,
               }}
             >
-              Hi, I'm DeeTech —
+              Hi, I'm Daniel —
               <br />
               <span
                 style={{

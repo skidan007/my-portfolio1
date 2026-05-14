@@ -192,7 +192,7 @@ export default function Hero() {
               lineHeight: 1.6,
             }}
           >
-            Business Administration graduate — University of Lagos.
+            Business Mindset.
             <br />
             Where finance meets functions, and deadlines meet deployments.
           </p>
@@ -367,7 +367,7 @@ export default function Hero() {
                     marginTop: 8,
                   }}
                 >
-                  DeeTech
+                  DeeTeck
                 </div>
               </div>
             </div>
