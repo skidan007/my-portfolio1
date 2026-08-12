@@ -1,4 +1,5 @@
 import budgetflowLogo from "../assets/budgetflow-logo.png";
+import fbciLogo from "../assets/fbci-logo.png";
 import heroo from "../assets/hero.png";
 
 export const NAV_LINKS = [
@@ -82,10 +83,10 @@ export const PROJECTS = [
 
   {
     id: 2,
-    title: "E-Commerce Platform",
-    desc: "Full-featured storefront with cart, Stripe payments, admin dashboard, and inventory management.",
+    title: "Church Management System(In Progress)",
+    desc: "Full-featured church management system with member management, event scheduling, and announcement and communication features.",
     tags: ["Next.js", "Express", "MongoDB"],
-    image: heroo,
+    image: fbciLogo,
     color: "#1A6FD4",
     liveDemo: "#",
     github: "#",
@@ -96,7 +97,7 @@ export const PROJECTS = [
     title: "School Management System",
     desc: "Complete school ERP — attendance, grades, timetables, and parent portals. Teachers actually like it.",
     tags: ["React", "Node.js", "PostgreSQL"],
-    image: "🎓",
+    image: heroo,
     color: "#7C3AED",
     liveDemo: "#",
     github: "#",
