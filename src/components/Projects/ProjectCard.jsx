@@ -1,6 +1,14 @@
 import { useState } from "react";
 
-export default function ProjectCard({ title, desc, tags, emoji, color }) {
+export default function ProjectCard({
+  title,
+  desc,
+  tags,
+  image,
+  color,
+  liveDemo,
+  github,
+}) {
   const [hov, setHov] = useState(false);
 
   return (
@@ -11,6 +19,10 @@ export default function ProjectCard({ title, desc, tags, emoji, color }) {
         background: "rgba(255,255,255,0.02)",
         border: `1px solid ${hov ? color + "50" : "rgba(255,255,255,0.07)"}`,
         borderRadius: 16,
+        maxWidth: 350,
+        width: "100%",
+        minHeight: 620,
+        height: "100%",
         overflow: "hidden",
         transition: "all 0.3s ease",
         transform: hov ? "translateY(-8px)" : "none",
@@ -20,7 +32,7 @@ export default function ProjectCard({ title, desc, tags, emoji, color }) {
       {/* Image area */}
       <div
         style={{
-          height: 160,
+          height: 350,
           background: `linear-gradient(135deg, ${color}20, ${color}08)`,
           display: "flex",
           alignItems: "center",
@@ -30,7 +42,20 @@ export default function ProjectCard({ title, desc, tags, emoji, color }) {
           position: "relative",
         }}
       >
-        {emoji}
+        <div>
+          <img
+            src={image}
+            alt={title}
+            style={{
+              width: 300,
+              height: 300,
+              borderRadius: 16,
+              justifyContent: "center",
+              display: "flex",
+              objectFit: "contain",
+            }}
+          />
+        </div>
         <div
           style={{
             position: "absolute",
@@ -68,7 +93,14 @@ export default function ProjectCard({ title, desc, tags, emoji, color }) {
         >
           {desc}
         </p>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 20 }}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 6,
+            marginBottom: 20,
+          }}
+        >
           {tags.map((tag) => (
             <span
               key={tag}
@@ -101,7 +133,14 @@ export default function ProjectCard({ title, desc, tags, emoji, color }) {
               cursor: "pointer",
             }}
           >
-            Live Demo ↗
+            <a
+              href={liveDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Live Demo ↗
+            </a>
           </button>
           <button
             style={{
@@ -117,7 +156,15 @@ export default function ProjectCard({ title, desc, tags, emoji, color }) {
               cursor: "pointer",
             }}
           >
-            GitHub
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              GitHub ↗
+            </a>
+            {/* GitHub */}
           </button>
         </div>
       </div>
