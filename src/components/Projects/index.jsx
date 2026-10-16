@@ -5,7 +5,7 @@ import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   return (
-    <section id="projects" style={{ padding: "100px clamp(1rem, 5vw, 3rem)" }}>
+    <section id="projects" className="projects-section" style={{ padding: "100px clamp(1rem, 5vw, 3rem)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <FadeIn>
           <SectionLabel>Projects</SectionLabel>
@@ -26,6 +26,7 @@ export default function Projects() {
         </FadeIn>
 
         <div
+          className="projects-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
@@ -33,7 +34,7 @@ export default function Projects() {
           }}
         >
           {PROJECTS.map((project, i) => (
-            <FadeIn key={project.title} delay={i * 0.08}>
+            <FadeIn key={project.id} delay={i * 0.08}>
               <ProjectCard {...project} />
             </FadeIn>
           ))}

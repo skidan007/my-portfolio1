@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { useScrollY } from "../../hooks/useScrollY";
 import { TEAL, GRAD } from "../../styles/theme";
 import { NAV_LINKS } from "../../data";
@@ -12,6 +12,15 @@ export default function Navbar() {
     setOpen(false);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
 
   return (
     <nav
@@ -43,10 +52,10 @@ export default function Navbar() {
           <div>
             <img
               src={logo}
-              alt="DeeTech Logo"
+              alt="02Tech Logo"
               style={{
                 display: "block",
-                width: 150,
+                width: 140,
                 height: "auto",
                 marginLeft: "auto",
               }}
@@ -103,6 +112,10 @@ export default function Navbar() {
         <button
           onClick={() => setOpen(!open)}
           className="nav-mobile"
+          type="button"
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           style={{
             background: "none",
             border: "none",
@@ -111,13 +124,14 @@ export default function Navbar() {
             fontSize: 24,
           }}
         >
-          {open ? "✕" : "☰"}
+          {open ? "×" : "☰"}
         </button>
       </div>
 
       {/* Mobile menu */}
       {open && (
         <div
+          id="mobile-navigation"
           style={{
             background: "rgba(5,10,20,0.97)",
             padding: "1.5rem",
@@ -149,6 +163,7 @@ export default function Navbar() {
               </button>
             </div>
           ))}
+          <button onClick={() => scrollTo("contact")} style={{ background: GRAD, border: 0, color: "#fff", cursor: "pointer", fontSize: 15, fontFamily: "'DM Sans', sans-serif", fontWeight: 600, padding: "11px 20px", borderRadius: 8, marginTop: 16 }}>Hire Me</button>
         </div>
       )}
     </nav>

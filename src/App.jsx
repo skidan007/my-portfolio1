@@ -2,6 +2,7 @@ import "./styles/global.css";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import FeatureHighlights from "./components/FeatureHighlights";
 import About from "./components/About";
 import Services from "./components/Services";
 import Stack from "./components/Stack";
@@ -18,6 +19,7 @@ export default function App() {
     <div style={{ background: "#030712", minHeight: "100vh", color: "#F1F5F9" }}>
       <Navbar />
       <Hero />
+      <FeatureHighlights />
       <About />
       <Services />
       <Stack />

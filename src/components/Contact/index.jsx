@@ -4,7 +4,7 @@ import FadeIn from "../common/FadeIn";
 import SectionLabel from "../common/SectionLabel";
 
 const CONTACT_INFO = [
-  { icon: "📧", label: "Email", val: "skidan007@mail.com" },
+  { icon: "📧", label: "Email", val: "02techng@mail.com" },
   { icon: "💬", label: "WhatsApp", val: "+234 7066557974" },
   { icon: "🐙", label: "GitHub", val: "github.com/skidan007" },
   { icon: "💼", label: "LinkedIn", val: "linkedin.com/in/daniel-benard" },
@@ -21,7 +21,7 @@ export default function Contact() {
     if (form.name && form.email && form.message) {
       const subject = `Portfolio Contact from ${form.name}`;
       const body = `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
-      const mailtoUrl = `mailto:skidan007@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoUrl = `mailto:02techng@mail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.open(mailtoUrl, '_blank');
       setSent(true);
     }
@@ -228,3 +228,4 @@ export default function Contact() {
     </section>
   );
 }
+

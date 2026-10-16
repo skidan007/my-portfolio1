@@ -20,7 +20,7 @@ export default function Footer() {
           marginBottom: 12,
         }}
       >
-        DeeTech
+        02Tech
       </div>
       <p
         style={{
@@ -39,7 +39,7 @@ export default function Footer() {
           marginTop: 8,
         }}
       >
-        © {new Date().getFullYear()} DeeTech · All rights reserved
+        © {new Date().getFullYear()} 02Tech · All rights reserved
       </p>
     </footer>
   );

@@ -74,7 +74,7 @@ export const PROJECTS = [
     id: 1,
     title: "BudgetFlow",
     desc: "A personal finance management app designed to help users budget their income, track expenses, build savings goals, and make better financial decisions.",
-    tags: ["React + Vite", "Tailwind CSS", "React Router", "Supabase"],
+    tags: ["React + Vite", "Tailwind CSS", "React Router", "Supabase Auth"],
     image: budgetflowLogo,
     color: "#00C9C8",
     liveDemo: "https://budgetflow-yzjx.vercel.app/",
@@ -94,6 +94,17 @@ export const PROJECTS = [
 
   {
     id: 3,
+    title: "BudgetFlow Mobile App",
+    desc: "A personal finance management app designed to help users budget their income, track expenses, build savings goals, and make better financial decisions.",
+    tags: ["React Native", "Expo", "Expo Router", "PostgreSQL", "TypeScript", "Supabase Auth"],
+    image: budgetflowLogo,
+    color: "#00C9C8",
+    liveDemo: "https://budgetflow-yzjx.vercel.app/",
+    github: "https://github.com/skidan007/budgetflow",
+  },
+
+  {
+    id: 4,
     title: "School Management System",
     desc: "Complete school ERP — attendance, grades, timetables, and parent portals. Teachers actually like it.",
     tags: ["React", "Node.js", "PostgreSQL"],
@@ -104,7 +115,7 @@ export const PROJECTS = [
   },
 
   // {
-  //   id: 4,
+  //   id: 5,
   //   title: "Logistics Tracking App",
   //   desc: "Live package tracking with driver assignment, route optimization, and customer notifications.",
   //   tags: ["React Native", "Express", "MongoDB"],
@@ -115,6 +126,7 @@ export const PROJECTS = [
   // },
 
   // {
+  //   id: 6,
   //   title: "AI SaaS Dashboard",
   //   desc: "Analytics dashboard with AI-powered insights, real-time charts, and multi-tenant architecture.",
   //   tags: ["Next.js", "TypeScript", "Firebase"],
@@ -150,7 +162,7 @@ export const JOURNEY = [
   },
   {
     year: "2026",
-    title: "Founded DeeTech",
+    title: "Founded 02Tech",
     desc: "Combined business knowledge + tech skills. Building products that actually make money.",
     icon: "🚀",
   },
@@ -160,13 +172,13 @@ export const TESTIMONIALS = [
   {
     name: "Adaeze Okonkwo",
     role: "CEO, PaySwift Nigeria",
-    text: "DeeTech delivered our fintech app on time and on budget. The code quality is exceptional — our engineering team was genuinely impressed.",
+    text: "02Tech delivered our fintech app on time and on budget. The code quality is exceptional — our engineering team was genuinely impressed.",
     avatar: "AO",
   },
   {
     name: "Emeka Nwachukwu",
     role: "Founder, ShopHub",
-    text: "Working with DeeTech felt like having a CTO and lead developer in one. They understood the business side AND built a stunning product.",
+    text: "Working with 02Tech felt like having a CTO and lead developer in one. They understood the business side AND built a stunning product.",
     avatar: "EN",
   },
   {
