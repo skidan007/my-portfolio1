@@ -100,7 +100,9 @@ body { background: #030712; color: #F1F5F9; }
 .hero-availability span { width: 8px; height: 8px; border-radius: 50%; background: #34dfb0; box-shadow: 0 0 12px rgba(52,223,176,.7); }
 .hero h1 { margin: 0; color: #f7fbff; font: 800 clamp(40px, 4.5vw, 72px)/1.04 'Montserrat', sans-serif; letter-spacing: -.055em; }
 .hero h1 span { background: linear-gradient(100deg, #65f1ed 0%, #22b9ff 54%, #3579ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.hero-role { margin: 17px 0 7px; color: #58dfff; font: 600 17px 'DM Sans', sans-serif; letter-spacing: .02em; }
+.hero-role { min-height: 26px; margin: 17px 0 7px; color: #58dfff; font: 600 17px 'DM Sans', sans-serif; letter-spacing: .02em; }
+.hero-role-caret { display: inline-block; width: 2px; height: 1em; margin-left: 4px; vertical-align: -2px; background: currentColor; animation: caret-blink .8s step-end infinite; }
+@keyframes caret-blink { 50% { opacity: 0; } }
 .hero-description { max-width: 550px; margin: 0; color: #bdc9d7; font: 400 16px/1.7 'DM Sans', sans-serif; }
 .hero-description strong { color: #f1f6fb; font-weight: 600; }
 .hero-personality { margin: 11px 0 20px; color: #92a2b4; font: italic 14px/1.5 'DM Sans', sans-serif; }
@@ -170,5 +172,6 @@ body { background: #030712; color: #F1F5F9; }
 @media (prefers-reduced-motion: reduce) {
   .hero-scroll { animation: none; }
   .hero-button { transition: none; }
+  .hero-role-caret { animation: none; }
   html { scroll-behavior: auto; }
 }

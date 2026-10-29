@@ -1,4 +1,39 @@
-﻿export default function Hero() {
+﻿import { useEffect, useState } from "react";
+
+const developerRoles = [
+  "Mobile App Developer",
+  "Frontend Developer",
+  "Fullstack Developer",
+];
+
+export default function Hero() {
+  const [role, setRole] = useState(developerRoles[0]);
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [characterIndex, setCharacterIndex] = useState(developerRoles[0].length);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentRole = developerRoles[roleIndex];
+    let timeout;
+
+    if (!isDeleting && characterIndex === currentRole.length) {
+      timeout = window.setTimeout(() => setIsDeleting(true), 3000);
+    } else if (isDeleting && characterIndex === 0) {
+      timeout = window.setTimeout(() => {
+        setIsDeleting(false);
+        setRoleIndex((current) => (current + 1) % developerRoles.length);
+      }, 250);
+    } else {
+      timeout = window.setTimeout(() => {
+        const nextIndex = characterIndex + (isDeleting ? -1 : 1);
+        setCharacterIndex(nextIndex);
+        setRole(currentRole.slice(0, nextIndex));
+      }, isDeleting ? 35 : 75);
+    }
+
+    return () => window.clearTimeout(timeout);
+  }, [characterIndex, isDeleting, roleIndex]);
+
   const scrollTo = (id) =>
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
@@ -9,7 +44,9 @@
         <div className="hero-copy">
           <div className="hero-availability"><span />Available for Projects</div>
           <h1>Building Scalable<br /><span>Web &amp; Mobile</span><br />Experiences</h1>
-          <p className="hero-role">Mobile App Developer</p>
+          <p className="hero-role" aria-live="polite">
+            {role}<span className="hero-role-caret" aria-hidden="true" />
+          </p>
           <p className="hero-description"><strong>Business Mindset.</strong><br />Where finance meets functions, and deadlines meet deployments.</p>
           <p className="hero-personality">&#10022; I debug code faster after eating shawarma. Documented fact.</p>
           <div className="hero-cta">
@@ -22,4 +59,3 @@
     </section>
   );
 }
-
