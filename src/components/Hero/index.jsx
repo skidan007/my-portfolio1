@@ -51,7 +51,14 @@ export default function Hero() {
           <p className="hero-personality">&#10022; I debug code faster after eating shawarma. Documented fact.</p>
           <div className="hero-cta">
             <button className="hero-button hero-button-primary" onClick={() => scrollTo("projects")}>View Projects <span aria-hidden="true">&#8594;</span></button>
-            <button className="hero-button hero-button-secondary" onClick={() => scrollTo("contact")}>Hire Me</button>
+            <a
+              className="hero-button hero-button-secondary"
+              href="/Daniel_Victor_Bernard_Software_Developer_Resume.pdf"
+              download="Daniel Victor Bernard Resume.pdf"
+            >
+              Download Resume
+            </a>
+            <a className="hero-button hero-button-secondary" href="https://github.com/skidan007" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">&#8599;</span></a>
           </div>
         </div>
       </div>

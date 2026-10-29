@@ -107,13 +107,14 @@ body { background: #030712; color: #F1F5F9; }
 .hero-description strong { color: #f1f6fb; font-weight: 600; }
 .hero-personality { margin: 11px 0 20px; color: #92a2b4; font: italic 14px/1.5 'DM Sans', sans-serif; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
-.hero-button { min-height: 52px; padding: 0 25px; border-radius: 9px; cursor: pointer; font: 600 15px 'DM Sans', sans-serif; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.hero-button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 25px; border-radius: 9px; cursor: pointer; text-decoration: none; font: 600 15px 'DM Sans', sans-serif; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
 .hero-button:hover { transform: translateY(-2px); }
 .hero-button:focus-visible { outline: 3px solid #9af6ff; outline-offset: 3px; }
 .hero-button-primary { border: 0; color: #fff; background: linear-gradient(110deg, #00c9c8, #176fe3); box-shadow: 0 8px 30px rgba(0,139,220,.25); }
 .hero-button-primary:hover { box-shadow: 0 10px 34px rgba(0,166,245,.4); }
 .hero-button-primary span { margin-left: 8px; }
 .hero-button-secondary { border: 1px solid rgba(63,215,246,.55); color: #8beeff; background: rgba(3,17,32,.54); }
+.hero-button-secondary span { margin-left: 8px; }
 .hero-button-secondary:hover { background: rgba(0,201,200,.13); }
 .hero-scroll { position: absolute; bottom: 26px; left: 50%; color: rgba(180,220,240,.7); font-size: 21px; animation: bounce 2s ease-in-out infinite; }
 .feature-strip { position: relative; z-index: 1; background: #07101e; border-top: 1px solid rgba(71,174,220,.12); border-bottom: 1px solid rgba(71,174,220,.12); }
