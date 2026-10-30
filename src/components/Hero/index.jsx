@@ -1,9 +1,13 @@
 ﻿import { useEffect, useState } from "react";
 
 const developerRoles = [
-  "Mobile App Developer",
-  "Frontend Developer",
-  "Fullstack Developer",
+  "Software Developer",
+  "React",
+  "Node.js",
+  "Express",
+  "React Native",
+  "PostgreSQL",
+  "TypeScript",
 ];
 
 export default function Hero() {
@@ -43,11 +47,11 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-copy">
           <div className="hero-availability"><span />Available for Projects</div>
-          <h1>Building Scalable<br /><span>Web &amp; Mobile</span><br />Experiences</h1>
+          <h1>I Build<br /><span>Web Applications</span><br />That Solve Real Problems</h1>
           <p className="hero-role" aria-live="polite">
             {role}<span className="hero-role-caret" aria-hidden="true" />
           </p>
-          <p className="hero-description"><strong>Business Mindset.</strong><br />Where finance meets functions, and deadlines meet deployments.</p>
+          <p className="hero-description"><strong>Business Mindset.</strong><br />Where finance meets functions, and deadlines meet deployments.<br />  I build practical web applications with a focus on clean interfaces, REST APIs, database design, and reliable business logic. I enjoy turning real-world problems into useful software while continuously strengthening my engineering skills.</p>
           <p className="hero-personality">&#10022; I debug code faster after eating shawarma. Documented fact.</p>
           <div className="hero-cta">
             <button className="hero-button hero-button-primary" onClick={() => scrollTo("projects")}>View Projects <span aria-hidden="true">&#8594;</span></button>

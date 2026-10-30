@@ -1,27 +1,31 @@
 import { useState } from "react";
+import { FiImage } from "react-icons/fi";
 
 export default function ProjectCard({
   title,
   desc,
   tags,
   image,
+  imageAlt,
   color,
   liveDemo,
   github,
+  status,
+  previewLabel,
 }) {
   const [hov, setHov] = useState(false);
 
   return (
     <div
+      className="project-card"
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
       style={{
         background: "rgba(255,255,255,0.02)",
         border: `1px solid ${hov ? color + "50" : "rgba(255,255,255,0.07)"}`,
         borderRadius: 16,
-        maxWidth: 350,
         width: "100%",
-        minHeight: 620,
+        minHeight: 0,
         height: "100%",
         overflow: "hidden",
         transition: "all 0.3s ease",
@@ -32,7 +36,7 @@ export default function ProjectCard({
       {/* Image area */}
       <div
         style={{
-          height: 350,
+          height: 250,
           background: `linear-gradient(135deg, ${color}20, ${color}08)`,
           display: "flex",
           alignItems: "center",
@@ -42,20 +46,14 @@ export default function ProjectCard({
           position: "relative",
         }}
       >
-        <div>
-          <img
-            src={image}
-            alt={title}
-            style={{
-              width: 300,
-              height: 300,
-              borderRadius: 16,
-              justifyContent: "center",
-              display: "flex",
-              objectFit: "contain",
-            }}
-          />
-        </div>
+        {image ? (
+          <img src={image} alt={imageAlt || `${title} project image`} className="project-image" />
+        ) : (
+          <div className="project-preview-missing" role="img" aria-label={previewLabel || `${title} image preview unavailable`}>
+            <FiImage size={34} aria-hidden="true" />
+            <span>{previewLabel || "Project image unavailable"}</span>
+          </div>
+        )}
         <div
           style={{
             position: "absolute",
@@ -71,6 +69,7 @@ export default function ProjectCard({
       </div>
 
       <div style={{ padding: "1.5rem" }}>
+        {status && <p className="project-status">{status}</p>}
         <h3
           style={{
             fontFamily: "'Montserrat', sans-serif",
@@ -86,7 +85,7 @@ export default function ProjectCard({
           style={{
             color: "#94A3B8",
             fontFamily: "'DM Sans', sans-serif",
-            fontSize: "0.875rem",
+            fontSize: "1rem",
             lineHeight: 1.7,
             marginBottom: 16,
           }}
@@ -105,7 +104,7 @@ export default function ProjectCard({
             <span
               key={tag}
               style={{
-                fontSize: 11,
+                fontSize: 13,
                 fontFamily: "'DM Mono', monospace",
                 color: color,
                 background: `${color}15`,
@@ -119,10 +118,16 @@ export default function ProjectCard({
           ))}
         </div>
         <div style={{ display: "flex", gap: 10 }}>
-          <button
+          {liveDemo && (
+          <a
+            href={liveDemo}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               flex: 1,
-              padding: "9px",
+              minHeight: 44,
+              display: "grid",
+              placeItems: "center",
               background: `${color}20`,
               border: `1px solid ${color}40`,
               borderRadius: 8,
@@ -130,22 +135,22 @@ export default function ProjectCard({
               fontFamily: "'DM Sans', sans-serif",
               fontSize: 13,
               fontWeight: 600,
-              cursor: "pointer",
+              textDecoration: "none",
             }}
           >
-            <a
-              href={liveDemo}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
               Live Demo ↗
-            </a>
-          </button>
-          <button
+          </a>
+          )}
+          {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               flex: 1,
-              padding: "9px",
+              minHeight: 44,
+              display: "grid",
+              placeItems: "center",
               background: "transparent",
               border: "1px solid rgba(255,255,255,0.1)",
               borderRadius: 8,
@@ -153,19 +158,12 @@ export default function ProjectCard({
               fontFamily: "'DM Sans', sans-serif",
               fontSize: 13,
               fontWeight: 600,
-              cursor: "pointer",
+            textDecoration: "none",
             }}
           >
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
               GitHub ↗
-            </a>
-            {/* GitHub */}
-          </button>
+          </a>
+          )}
         </div>
       </div>
     </div>

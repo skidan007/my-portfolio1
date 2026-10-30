@@ -21,7 +21,7 @@ export default function Projects() {
               textAlign: "center",
             }}
           >
-            Things I've Shipped
+            Selected Projects
           </h2>
         </FadeIn>
 
@@ -29,7 +29,8 @@ export default function Projects() {
           className="projects-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+            alignItems: "stretch",
             gap: 28,
           }}
         >

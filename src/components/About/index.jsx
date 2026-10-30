@@ -68,9 +68,9 @@ export default function About() {
                   lineHeight: 1.8,
                 }}
               >
-                Business Administration at UNILAG taught me how money moves,
-                how users think, and why half of startups fail. Software
-                engineering taught me how to build the other half.
+                Business Administration at UNILAG shaped how I think about
+                users and business needs. Ongoing frontend practice helps me
+                turn those ideas into useful interfaces and applications.
               </p>
             </div>
           </FadeIn>
@@ -107,9 +107,9 @@ export default function About() {
                 marginBottom: 16,
               }}
             >
-              I'm a Full Stack and Mobile App Developer with a business degree,
-              which basically means I'm the person who says "yes, that feature
-              is cool — but will it convert?" during every product meeting.
+              I'm a frontend developer with a business degree, building practical
+              web interfaces and expanding my experience with mobile and backend
+              development.
             </p>
             <p
               style={{
@@ -119,9 +119,8 @@ export default function About() {
                 marginBottom: 24,
               }}
             >
-              I've shipped apps across fintech, e-commerce, education, and
-              logistics. I care about clean architecture, fast delivery, and
-              making sure the README actually makes sense.
+              I care about clear interfaces, responsive layouts, maintainable
+              components and making sure the README actually makes sense.
             </p>
             <div
               style={{

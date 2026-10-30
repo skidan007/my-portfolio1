@@ -6,7 +6,7 @@ export default function FadeIn({ children, delay = 0, className = "" }) {
   return (
     <div
       ref={ref}
-      className={className}
+      className={`fade-in ${className}`.trim()}
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(32px)",

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GRAD } from "../../styles/theme";
 
-export default function ServiceCard({ icon, title, desc }) {
+export default function ServiceCard({ icon: Icon, title, desc, highlights = [] }) {
   const [hov, setHov] = useState(false);
 
   return (
@@ -33,7 +33,9 @@ export default function ServiceCard({ icon, title, desc }) {
           }}
         />
       )}
-      <div style={{ fontSize: 36, marginBottom: 16 }}>{icon}</div>
+      <div className="skill-icon" aria-hidden="true">
+        <Icon size={30} strokeWidth={1.9} />
+      </div>
       <h3
         style={{
           fontFamily: "'Montserrat', sans-serif",
@@ -55,6 +57,11 @@ export default function ServiceCard({ icon, title, desc }) {
       >
         {desc}
       </p>
+      {highlights.length > 0 && (
+        <ul className="skill-highlights" aria-label="Frontend skills">
+          {highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
+        </ul>
+      )}
     </div>
   );
 }

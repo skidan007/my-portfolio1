@@ -21,15 +21,16 @@ export default function Services() {
               textAlign: "center",
             }}
           >
-            What I Build for You
+            Technical Skills &amp; Expertise
           </h2>
         </FadeIn>
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
             gap: 24,
           }}
+          className="skills-grid"
         >
           {SERVICES.map((service, i) => (
             <FadeIn key={service.title} delay={i * 0.08}>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { TEAL, GRAD } from "../../styles/theme";
 import FadeIn from "../common/FadeIn";
 import SectionLabel from "../common/SectionLabel";
@@ -13,17 +14,36 @@ const CONTACT_INFO = [
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [feedback, setFeedback] = useState("");
+  const [sending, setSending] = useState(false);
 
   const handle = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const submit = () => {
-    if (form.name && form.email && form.message) {
-      const subject = `Portfolio Contact from ${form.name}`;
-      const body = `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
-      const mailtoUrl = `mailto:02techng@mail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.open(mailtoUrl, '_blank');
+  const submit = async (event) => {
+    event.preventDefault();
+    setFeedback("");
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setFeedback("Message sending is not configured yet. Please email 02techng@mail.com directly.");
+      return;
+    }
+
+    setSending(true);
+    try {
+      await emailjs.send(serviceId, templateId, {
+        from_name: form.name,
+        reply_to: form.email,
+        message: form.message,
+      }, { publicKey });
       setSent(true);
+    } catch {
+      setFeedback("Your message could not be sent. Please try again or email 02techng@mail.com directly.");
+    } finally {
+      setSending(false);
     }
   };
 
@@ -36,7 +56,6 @@ export default function Contact() {
     color: "#F1F5F9",
     fontFamily: "'DM Sans', sans-serif",
     fontSize: 15,
-    outline: "none",
     boxSizing: "border-box",
     transition: "border-color 0.2s",
   };
@@ -159,7 +178,8 @@ export default function Contact() {
                 </p>
               </div>
             ) : (
-              <div
+              <form
+                onSubmit={submit}
                 style={{
                   background: "rgba(255,255,255,0.02)",
                   border: "1px solid rgba(0,201,200,0.15)",
@@ -170,9 +190,13 @@ export default function Contact() {
                 <div style={{ marginBottom: 16 }}>
                   <input
                     name="name"
+                    aria-label="Your name"
+                    className="contact-input"
                     value={form.name}
                     onChange={handle}
                     placeholder="Your Name"
+                    autoComplete="name"
+                    required
                     style={inputStyle}
                     onFocus={(e) => (e.target.style.borderColor = TEAL)}
                     onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
@@ -181,9 +205,14 @@ export default function Contact() {
                 <div style={{ marginBottom: 16 }}>
                   <input
                     name="email"
+                    aria-label="Your email"
+                    className="contact-input"
+                    type="email"
                     value={form.email}
                     onChange={handle}
                     placeholder="Your Email"
+                    autoComplete="email"
+                    required
                     style={inputStyle}
                     onFocus={(e) => (e.target.style.borderColor = TEAL)}
                     onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
@@ -192,17 +221,23 @@ export default function Contact() {
                 <div style={{ marginBottom: 24 }}>
                   <textarea
                     name="message"
+                    aria-label="Your message"
+                    className="contact-input"
                     value={form.message}
                     onChange={handle}
                     placeholder="Tell me about your project..."
                     rows={5}
+                    required
                     style={{ ...inputStyle, resize: "vertical" }}
                     onFocus={(e) => (e.target.style.borderColor = TEAL)}
                     onBlur={(e) => (e.target.style.borderColor = "rgba(255,255,255,0.1)")}
                   />
                 </div>
+                {feedback && <p role="alert" className="contact-feedback">{feedback}</p>}
                 <button
-                  onClick={submit} 
+                  type="submit"
+                  disabled={sending}
+                  aria-busy={sending}
                   style={{
                     width: "100%",
                     padding: "15px",
@@ -218,9 +253,9 @@ export default function Contact() {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  Send Message →
+                  {sending ? "Sending…" : "Send Message →"}
                 </button>
-              </div>
+              </form>
             )}
           </FadeIn>
         </div>

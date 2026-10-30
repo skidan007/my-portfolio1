@@ -71,6 +71,7 @@ export default function Navbar() {
           {NAV_LINKS.map((link) => (
             <button
               key={link}
+              type="button"
               onClick={() => scrollTo(link.toLowerCase())}
               style={{
                 background: "none",
@@ -148,6 +149,7 @@ export default function Navbar() {
             >
               <button
                 onClick={() => scrollTo(link.toLowerCase())}
+                type="button"
                 style={{
                   background: "none",
                   border: "none",
@@ -163,7 +165,7 @@ export default function Navbar() {
               </button>
             </div>
           ))}
-          <button onClick={() => scrollTo("contact")} style={{ background: GRAD, border: 0, color: "#fff", cursor: "pointer", fontSize: 15, fontFamily: "'DM Sans', sans-serif", fontWeight: 600, padding: "11px 20px", borderRadius: 8, marginTop: 16 }}>Hire Me</button>
+          <button type="button" onClick={() => scrollTo("contact")} style={{ background: GRAD, border: 0, color: "#fff", cursor: "pointer", fontSize: 15, fontFamily: "'DM Sans', sans-serif", fontWeight: 600, padding: "11px 20px", borderRadius: 8, marginTop: 16 }}>Hire Me</button>
         </div>
       )}
     </nav>

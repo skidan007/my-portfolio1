@@ -2,6 +2,14 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Contact form setup
+
+The contact form sends messages through EmailJS. Set `VITE_EMAILJS_SERVICE_ID`,
+`VITE_EMAILJS_TEMPLATE_ID`, and `VITE_EMAILJS_PUBLIC_KEY` in the local `.env`
+file and deployment environment. The EmailJS template should accept
+`from_name`, `reply_to`, and `message`. The form reports an error when these
+values are missing or when EmailJS rejects a send.
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)

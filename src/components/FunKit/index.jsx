@@ -8,7 +8,7 @@ export default function FunKit() {
     <section style={{ padding: "100px clamp(1rem, 5vw, 3rem)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <FadeIn>
-          <SectionLabel>Just for Fun</SectionLabel>
+          <SectionLabel>Approach</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
           <h2
@@ -21,7 +21,7 @@ export default function FunKit() {
               textAlign: "center",
             }}
           >
-            Developer Survival Kit 🛠️
+            How I Approach Development
           </h2>
           <p
             style={{
@@ -31,16 +31,17 @@ export default function FunKit() {
               marginBottom: 48,
             }}
           >
-            Because not everything needs to be a Jira ticket.
+            A few principles that guide how I build and improve software.
           </p>
         </FadeIn>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
             gap: 24,
           }}
+          className="approach-grid"
         >
           {FUN_KIT.map((item, i) => (
             <FadeIn key={item.title} delay={i * 0.08}>

@@ -40,7 +40,7 @@ export default function Journey() {
           />
 
           {JOURNEY.map((item, i) => (
-            <FadeIn key={item.year} delay={i * 0.12}>
+            <FadeIn key={`${item.year}-${item.title}`} delay={i * 0.12}>
               <div
                 style={{
                   display: "flex",

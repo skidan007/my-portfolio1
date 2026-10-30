@@ -28,9 +28,10 @@ export default function Stack() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
             gap: 32,
           }}
+          className="tools-grid"
         >
           {Object.entries(STACK).map(([category, techs], ci) => (
             <FadeIn key={category} delay={ci * 0.1}>
